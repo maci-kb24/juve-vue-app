@@ -1,10 +1,8 @@
 <template>
-  <v-app-bar>
+  <v-app-bar class="bg-grey-darken-4">
     <v-toolbar-title>
       <router-link to="/"
-        ><img
-          src="../assets/images/logos/Juventus-FC-Logo-2017-present-700x394-removebg-preview.png"
-          width="40"
+        ><img src="../assets/images/logos/juve_logo.png" width="40"
       /></router-link>
     </v-toolbar-title>
 
@@ -16,6 +14,7 @@
       <router-link to="/team">The Team</router-link>
       <router-link to="/matches">Matches</router-link>
     </v-toolbar-items>
+    <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" location="bottom" temporary>
