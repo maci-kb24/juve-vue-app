@@ -1,20 +1,25 @@
 <template>
-  <v-app-bar class="bg-grey-darken-4">
+  <v-app-bar class="bg-grey-darken-4" flat app>
     <v-toolbar-title>
       <router-link to="/"
         ><img src="../assets/images/logos/juve_logo.png" width="40"
       /></router-link>
     </v-toolbar-title>
-
     <v-spacer></v-spacer>
-
     <v-toolbar-items>
-      <router-link to="/">Home</router-link>
-
-      <router-link to="/team">The Team</router-link>
-      <router-link to="/matches">Matches</router-link>
+      <router-link
+        class="text-white px-3"
+        v-for="link in links"
+        :key="link.id"
+        :to="link.url"
+        >{{ link.text }}</router-link
+      >
     </v-toolbar-items>
-    <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+    <v-app-bar-nav-icon
+      @click="drawer = !drawer"
+      class="d-sm-none"
+    ></v-app-bar-nav-icon>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" location="bottom" temporary>
@@ -40,6 +45,11 @@ export default {
         { text: "Home", icon: "mdi-home", to: "/" },
         { text: "The Team", icon: "mdi-help-circle", to: "/team" },
         { text: "Matches", icon: "mdi-email", to: "/matches" },
+      ],
+      links: [
+        { id: 1, text: "Home", url: "/" },
+        { id: 2, text: "The Team", url: "/team" },
+        { id: 3, text: "Matches", url: "/matches" },
       ],
     };
   },

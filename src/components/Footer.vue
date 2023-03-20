@@ -1,7 +1,5 @@
 <template>
-  <v-footer
-    class="bg-grey-darken-4 text-center flex-column flex-grow-0 flex-shrink-0 py-3"
-  >
+  <v-footer class="bg-grey-darken-4 text-center flex-column py-3" flat>
     <div class="mb-2">
       <img src="../assets/images/logos/juve_logo.png" width="40" alt="" />
     </div>
@@ -12,6 +10,6 @@
   </v-footer>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup></script>
+
+<style scoped></style>
