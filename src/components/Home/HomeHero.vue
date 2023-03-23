@@ -14,13 +14,11 @@
               </div>
             </Transition>
           </div>
-          <Transition name="slide-stripes" appear>
-            <div class="d-none d-md-block">
-              <div class="stripe bg-white" style="left: 36%"></div>
-              <div class="stripe bg-black" style="left: 44.9%"></div>
-              <div class="stripe bg-white" style="right: 37.9%"></div>
-            </div>
-          </Transition>
+          <div class="d-none d-md-block">
+            <div class="stripe bg-white" style="left: 36%"></div>
+            <div class="stripe bg-black" style="left: 44.7%"></div>
+            <div class="stripe bg-white" style="right: 38.2%"></div>
+          </div>
         </v-col>
         <v-col cols="3">
           <Transition name="slide-img" appear>
@@ -42,15 +40,15 @@
   /* background-color: #ef484d; */
 }
 .hero-container .hero-row {
-  padding: 100px 0px;
+  padding: 110px 0px;
 }
 .stripe {
   width: 7rem;
-  height: 90vh;
+  height: 24.3%;
   position: absolute;
   overflow: hidden;
   transform: skewX(-20deg);
-  top: 6%;
+  top: 2.9%;
 }
 
 .slide-fade-enter-active {
@@ -63,19 +61,6 @@
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(-400%);
-}
-
-.slide-stripes-enter-active {
-  transition: all 0.6s ease-in-out;
-}
-
-/* .slide-stripes-leave-active {
-  transition: all 0.8s ease-out;
-} */
-
-.slide-stripes-enter-from,
-.slide-stripes-leave-to {
   transform: translateX(-400%);
 }
 
