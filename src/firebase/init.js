@@ -1,5 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import firebase from "firebase/app";
+import "firebase/app";
+import "firebase/database";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -14,13 +16,9 @@ const firebaseConfig = {
   appId: "1:891345036424:web:6684c2a0b6ece27dcf2b3d",
 };
 
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const db = firebase.database(app);
+const firebaseDB = firebase.database();
+const firebaseMatches = firebaseDB.ref("matches");
 
-db.ref("teams").once("value", (snapshot) => {
-  const data = snapshot.val();
-  console.log(data);
-});
-
-// export default db;
+export { firebase, firebaseMatches };

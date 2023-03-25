@@ -55,3 +55,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-app-bar {
+  border-bottom: 2px solid white;
+}
+</style>
