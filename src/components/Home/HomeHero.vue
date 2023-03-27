@@ -48,7 +48,7 @@
   position: absolute;
   overflow: hidden;
   transform: skewX(-20deg);
-  top: 2.9%;
+  top: 1.9%;
 }
 
 .slide-fade-enter-active {

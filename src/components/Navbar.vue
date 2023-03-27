@@ -6,7 +6,7 @@
       /></router-link>
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-toolbar-items>
+    <v-toolbar-items class="d-none d-sm-flex align-center">
       <router-link
         class="text-white px-3"
         v-for="link in links"
