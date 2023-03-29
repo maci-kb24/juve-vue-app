@@ -13,24 +13,32 @@
         </v-row>
         <v-row>
           <v-col v-for="keeper in keepers" cols="3">
-            <v-card :rounded="0" width="260" style="border: 9px solid white">
-              <img
-                :src="keeper.imageUrl"
-                alt=""
-                height="240"
-                style="background-size: cover"
-              />
-              <div class="d-flex align-center justify-space-between">
-                <v-card-title class="pa-0">{{ keeper.name }} </v-card-title>
-                <v-card-subtitle class="pa-0"
-                  ><span
-                    class="mt-8 d-inline-block text-grey-darken-1"
-                    style="font-size: 7rem"
-                    >{{ keeper.number }}</span
-                  >
-                </v-card-subtitle>
-              </div>
-            </v-card>
+            <v-slide-x-transition class="slide-card">
+              <v-card
+                v-if="show"
+                :rounded="0"
+                width="260"
+                style="border: 9px solid white"
+              >
+                <img
+                  :src="keeper.imageUrl"
+                  alt=""
+                  height="240"
+                  style="background-size: cover"
+                />
+
+                <div class="d-flex align-center justify-space-between">
+                  <v-card-title class="pa-0">{{ keeper.name }} </v-card-title>
+                  <v-card-subtitle class="pa-0"
+                    ><span
+                      class="mt-8 d-inline-block text-grey-darken-1"
+                      style="font-size: 7rem"
+                      >{{ keeper.number }}</span
+                    >
+                  </v-card-subtitle>
+                </div>
+              </v-card>
+            </v-slide-x-transition>
           </v-col>
         </v-row>
       </div>
@@ -44,27 +52,34 @@
         </v-row>
         <v-row>
           <v-col v-for="b in 6" :key="b" cols="3">
-            <v-card :rounded="0" width="260" style="border: 9px solid white">
-              <img
-                src="../assets/images/players/GK/Sczeschy.png"
-                alt=""
-                height="240"
-                style="background-size: cover"
-              />
+            <v-slide-x-transition class="slide-card">
+              <v-card
+                v-if="show"
+                :rounded="0"
+                width="260"
+                style="border: 9px solid white"
+              >
+                <img
+                  src="../assets/images/players/GK/Sczeschy.png"
+                  alt=""
+                  height="240"
+                  style="background-size: cover"
+                />
 
-              <div class="d-flex align-center justify-space-between">
-                <v-card-title class="pa-0"
-                  >Luiz Da Silva<br />Danilo
-                </v-card-title>
-                <v-card-subtitle class="pa-0"
-                  ><span
-                    class="mt-8 d-inline-block text-grey-darken-1"
-                    style="font-size: 7rem"
-                    >6</span
-                  >
-                </v-card-subtitle>
-              </div>
-            </v-card>
+                <div class="d-flex align-center justify-space-between">
+                  <v-card-title class="pa-0"
+                    >Luiz Da Silva<br />Danilo
+                  </v-card-title>
+                  <v-card-subtitle class="pa-0"
+                    ><span
+                      class="mt-8 d-inline-block text-grey-darken-1"
+                      style="font-size: 7rem"
+                      >6</span
+                    >
+                  </v-card-subtitle>
+                </div>
+              </v-card>
+            </v-slide-x-transition>
           </v-col>
         </v-row>
       </div>
@@ -154,23 +169,35 @@ export default {
         {
           name: "Wojciech Szczesny",
           imageUrl:
-            "http://localhost:5176/src/assets/images/players/GK/Sczeschy.png",
+            "http://localhost:5174/src/assets/images/players/GK/Sczeschy.png",
           number: 1,
         },
         {
           name: "Mattia Perin",
           imageUrl:
-            "http://localhost:5176/src/assets/images/players/GK/Perin.png",
+            "http://localhost:5174/src/assets/images/players/GK/Perin.png",
           number: 36,
         },
         {
           name: "Carlo Pinsoglio",
           imageUrl:
-            "http://localhost:5176/src/assets/images/players/GK/Pinsoglio.png",
+            "http://localhost:5174/src/assets/images/players/GK/Pinsoglio.png",
           number: 23,
         },
       ],
+      defenders: [],
+      show: false,
     };
+  },
+  mounted() {
+    this.show = true;
+    fetch("https://juve-vue-app-default-rtdb.firebaseio.com/matches.json")
+      .then((response) => response.json())
+      .then((data) => {
+        for (let id in data) {
+          // this.defenders.push(data[id]);
+        }
+      });
   },
 };
 </script>
@@ -186,5 +213,14 @@ export default {
 .v-col-3 {
   flex: 0 0 21%;
   max-width: 21%;
+}
+
+.slide-card-enter-active {
+  transition: transform 1s;
+  transform: translateX(-350%);
+}
+.slide-card-leave-active {
+  transition: transform 1s;
+  transform: translateX(350%);
 }
 </style>

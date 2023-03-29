@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import "./assets/css/app.css";
 import App from "./App.vue";
 import router from "./router";
-// import { db } from "./firebase/init";
+import db from "./firebase/init.js";
 
 // Vuetify
 import "vuetify/styles";

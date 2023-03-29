@@ -6,18 +6,36 @@
           <h2 class="pa-2 d-inline-block text-white">Matches</h2>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="my-15">
         <v-col v-for="(item, id) in data" :key="id" cols="4">
-          <v-card>
-            <v-text-subtitle>{{ item.date }}</v-text-subtitle>
-            <v-card-text>
-              <img :src="item.thumbnail1" />{{ item.team1 }}
-              {{ item.score1 }}</v-card-text
-            >
-            <v-card-text
-              ><img :src="item.thumbnail2" /> {{ item.team2 }}
-              {{ item.score2 }}</v-card-text
-            >
+          <p class="text-body-2">{{ item.date }}</p>
+          <v-card class="`elevation-${18}`">
+            <v-card-text class="pa-0">
+              <div class="d-flex align-center">
+                <img :src="item.homeThumb" />
+                <p class="mr-auto text-h6 font-weight-bold">
+                  {{ item.homeTeam }}
+                </p>
+                <span
+                  class="d-inline-block pa-1 text-h4 text-white font-weight-bold"
+                  style="background-color: #ef484d"
+                  >{{ item.resultHome }}</span
+                >
+              </div>
+            </v-card-text>
+            <v-card-text class="pa-0 mt-1">
+              <div class="d-flex align-center">
+                <img :src="item.awayThumb" />
+                <p class="mr-auto text-h6 font-weight-bold">
+                  {{ item.awayTeam }}
+                </p>
+                <span
+                  class="d-inline-block pa-1 text-h4 text-white font-weight-bold"
+                  style="background-color: #ef484d"
+                  >{{ item.ResultAway }}</span
+                >
+              </div>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -41,85 +59,90 @@ import { reactive } from "vue";
 
 const data = reactive([
   {
-    date: "2022-01-01",
-    team1: "Juventus",
-    score1: 1,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Verona",
-    score2: 0,
-    thumbnail2: "https://placehold.co/40",
+    date: "08.10.2022",
+    homeTeam: "Milan",
+    resultHome: 2,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/milan.png",
+    awayTeam: "Juventus",
+    ResultAway: 0,
+    awayThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
   },
   {
-    date: "2022-01-02",
-    team1: "Sassuolo",
-    score1: 2,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Juventus",
-    score2: 5,
-    thumbnail2: "https://placehold.co/40",
+    date: "02.10.2022",
+    homeTeam: "Juventus",
+    resultHome: 3,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+    awayTeam: "Bologna",
+    ResultAway: 0,
+    awayThumb:
+      "http://localhost:5173/src/assets/images/logos/teams/bologna.png",
   },
   {
-    date: "2022-01-03",
-    team1: "Team E",
-    score1: 9,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team F",
-    score2: 11,
-    thumbnail2: "https://placehold.co/40",
+    date: "18.09.2022",
+    homeTeam: "Monza",
+    resultHome: 1,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/monza.png",
+    awayTeam: "Juventus",
+    ResultAway: 0,
+    awayThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
   },
   {
-    date: "2022-01-04",
-    team1: "Team G",
-    score1: 7,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team H",
-    score2: 6,
-    thumbnail2: "https://placehold.co/40",
+    date: "11.09.2022",
+    homeTeam: "Juventus",
+    resultHome: 2,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+    awayTeam: "Salernitana",
+    ResultAway: 2,
+    awayThumb:
+      "http://localhost:5173/src/assets/images/logos/teams/salernitana.png",
   },
   {
-    date: "2022-01-05",
-    team1: "Team I",
-    score1: 13,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team J",
-    score2: 15,
-    thumbnail2: "https://placehold.co/40",
+    date: "03.09.2022",
+    homeTeam: "Fiorentina",
+    resultHome: 1,
+    homeThumb:
+      "http://localhost:5173/src/assets/images/logos/teams/fiorentina.png",
+    awayTeam: "Juventus",
+    ResultAway: 1,
+    awayThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
   },
   {
-    date: "2022-01-06",
-    team1: "Team K",
-    score1: 8,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team L",
-    score2: 9,
-    thumbnail2: "https://placehold.co/40",
+    date: "31.08.2022",
+    homeTeam: "Juventus",
+    resultHome: 2,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+    awayTeam: "Spezia",
+    ResultAway: 0,
+    awayThumb: "http://localhost:5173/src/assets/images/logos/teams/spezia.png",
   },
   {
-    date: "2022-01-07",
-    team1: "Team M",
-    score1: 11,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team N",
-    score2: 6,
-    thumbnail2: "https://placehold.co/40",
+    date: "27.08.2022",
+    homeTeam: "Juventus",
+    resultHome: 1,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+    awayTeam: "Roma",
+    ResultAway: 1,
+    awayThumb: "http://localhost:5173/src/assets/images/logos/teams/roma.png",
   },
   {
-    date: "2022-01-08",
-    team1: "Team O",
-    score1: 7,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team P",
-    score2: 8,
-    thumbnail2: "https://placehold.co/40",
+    date: "22.08.2022",
+    homeTeam: "Sampdoria",
+    resultHome: 0,
+    homeThumb:
+      "http://localhost:5173/src/assets/images/logos/teams/sampdoria.png",
+    awayTeam: "Juventus",
+    ResultAway: 0,
+    awayThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
   },
   {
-    date: "2022-01-09",
-    team1: "Team Q",
-    score1: 10,
-    thumbnail1: "https://placehold.co/40",
-    team2: "Team P",
-    score2: 8,
-    thumbnail2: "https://placehold.co/40",
+    date: "15.08.2022",
+    homeTeam: "Juventus",
+    resultHome: 3,
+    homeThumb: "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+    awayTeam: "Sassuolo",
+    ResultAway: 0,
+    awayThumb:
+      "http://localhost:5173/src/assets/images/logos/teams/sassuolo.png",
   },
 ]);
 </script>

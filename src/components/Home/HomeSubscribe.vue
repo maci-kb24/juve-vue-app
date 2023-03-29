@@ -24,6 +24,8 @@
               label="Enter your email"
               required
             ></v-text-field>
+            <v-alert v-if="emailError" type="error">{{ emailError }}</v-alert>
+
             <v-btn type="submit" class="text-white enroll-btn mt-2"
               >Enroll</v-btn
             >
@@ -35,21 +37,42 @@
 </template>
 
 <script>
+// import db from "./firebase/init.js";
+
 export default {
   data: () => ({
     email: "",
+    emailError: "",
     emailRules: [
+      // (value) => /.+@.+\..+/.test(value) || "Email must be valid",
       (value) => {
-        if (value) return true;
-
+        if (value) {
+          return true;
+        }
         return "You must enter an email address.";
       },
     ],
   }),
   methods: {
     submitForm() {
-      console.log("email:" + this.email);
-      this.email = "";
+      fetch(
+        "https://juve-vue-app-default-rtdb.firebaseio.com/promotions.json",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ email: this.email }),
+        }
+      )
+        .then((response) => {
+          console.log(response);
+          this.email = "";
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      // this.email = "";
     },
   },
 };
