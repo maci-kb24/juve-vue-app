@@ -22,7 +22,7 @@
                 >
               </v-btn-toggle>
             </div>
-            <div class="game-result pa-4">
+            <!-- <div class="game-result pa-4">
               <p class="pb-1">Game Result</p>
               <v-btn-toggle v-model="gameResult">
                 <v-btn
@@ -43,23 +43,42 @@
                   >D</v-btn
                 >
               </v-btn-toggle>
-            </div>
+            </div> -->
           </div>
           <div class="matches-info">
-            <div v-for="match in filteredMatches" class="match-result">
-              <p>
-                <img :src="match.localThmb" alt="" width="80" height="80" />
-                {{ match.local }}
-                {{ match.resultLocal }}
-              </p>
-              <p>
-                <img :src="match.awayThmb" width="80" height="80" />
-                {{ match.away }}
-                {{ match.resultAway }}
-              </p>
-              <p>Date: {{ match.date }}</p>
-              <p>Stadium: {{ match.stadium }}</p>
-              <p>Referee: {{ match.referee }}</p>
+            <div v-for="match in filteredMatches" class="match-result d-flex">
+              <div
+                class="d-flex flex-column mt-4 mb-4 ml-4 pr-4"
+                style="border-right: 1px solid rgba(0, 0, 58, 0.2)"
+              >
+                <div class="d-flex align-center mb-1">
+                  <img :src="match.localThmb" alt="" width="40" height="40" />
+                  <p class="mx-2">{{ match.local }}</p>
+                  <p class="ml-16" style="color: #ef484d">
+                    {{ match.resultLocal }}
+                  </p>
+                </div>
+                <div class="d-flex align-center mb-1">
+                  <img :src="match.awayThmb" width="40" height="40" />
+                  <p class="mx-2">{{ match.away }}</p>
+                  <p class="ml-auto" style="color: #ef484d">
+                    {{ match.resultAway }}
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-column justify-center ml-4">
+                <p>
+                  Date: <span class="font-weight-light">{{ match.date }}</span>
+                </p>
+                <p>
+                  Stadium:
+                  <span class="font-weight-light">{{ match.stadium }}</span>
+                </p>
+                <p>
+                  Referee:
+                  <span class="font-weight-light">{{ match.referee }}</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -103,186 +122,188 @@ export default {
   data() {
     return {
       league: [
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
-        // {
-        //   pos: 1,
-        //   thumbnail:
-        //     "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
-        //   team: "Juventus",
-        //   win: 23,
-        //   draw: 5,
-        //   loss: 1,
-        //   pts: 91,
-        // },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
+        {
+          pos: 1,
+          thumbnail:
+            "http://localhost:5173/src/assets/images/logos/juve_logo-table.png",
+          team: "Juventus",
+          win: 23,
+          draw: 5,
+          loss: 1,
+          pts: 91,
+        },
       ],
       matches: [
-        // {
-        //   localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   local: "Milan",
-        //   resultLocal: 2,
-        //   date: "2023",
-        //   stadium: "ALianz",
-        //   referee: "Marcus",
-        //   awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   away: "Juventus",
-        //   resultAway: 0,
-        //   result: "W",
-        //   final: "Yes",
-        // },
-        // {
-        //   localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   local: "Milan",
-        //   resultLocal: 2,
-        //   date: "2023",
-        //   stadium: "ALianz",
-        //   referee: "Marcus",
-        //   awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   away: "Juventus",
-        //   resultAway: 0,
-        //   result: "W",
-        //   final: "Yes",
-        // },
-        // {
-        //   localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   local: "Milan",
-        //   resultLocal: 2,
-        //   date: "2023",
-        //   stadium: "ALianz",
-        //   referee: "Marcus",
-        //   awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   away: "Juventus",
-        //   resultAway: 0,
-        //   result: "W",
-        //   final: "Yes",
-        // },
-        // {
-        //   localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   local: "Milan",
-        //   resultLocal: 2,
-        //   date: "2023",
-        //   stadium: "ALianz",
-        //   referee: "Marcus",
-        //   awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   away: "Juventus",
-        //   resultAway: 0,
-        //   result: "W",
-        //   final: "Yes",
-        // },
-        // {
-        //   localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   local: "Milan",
-        //   resultLocal: 2,
-        //   date: "2023",
-        //   stadium: "ALianz",
-        //   referee: "Marcus",
-        //   awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   away: "Juventus",
-        //   resultAway: 0,
-        //   result: "W",
-        //   final: "Yes",
-        // },
-        // {
-        //   localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   local: "Milan",
-        //   resultLocal: 2,
-        //   date: "2023",
-        //   stadium: "ALianz",
-        //   referee: "Marcus",
-        //   awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
-        //   away: "Juventus",
-        //   resultAway: 0,
-        //   result: "W",
-        //   final: "Yes",
-        // },
+        {
+          localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          local: "Milan",
+          resultLocal: 2,
+          date: "2023",
+          stadium: "ALianz",
+          referee: "Marcus",
+          awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          away: "Juventus",
+          resultAway: 1,
+          result: "W",
+          final: "Yes",
+        },
+        {
+          localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          local: "Milan",
+          resultLocal: 2,
+          date: "2023",
+          stadium: "ALianz",
+          referee: "Marcus",
+          awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          away: "Juventus",
+          resultAway: 0,
+          result: "W",
+          final: "Yes",
+        },
+        {
+          localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          local: "Milan",
+          resultLocal: 2,
+          date: "2023",
+          stadium: "ALianz",
+          referee: "Marcus",
+          awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          away: "Juventus",
+          resultAway: 0,
+          result: "W",
+          final: "Yes",
+        },
+        {
+          localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          local: "Milan",
+          resultLocal: 2,
+          date: "2023",
+          stadium: "ALianz",
+          referee: "Marcus",
+          awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          away: "Juventus",
+          resultAway: 0,
+          result: "W",
+          final: "Yes",
+        },
+        {
+          localThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          local: "Milan",
+          resultLocal: 2,
+          date: "2023",
+          stadium: "ALianz",
+          referee: "Marcus",
+          awayThmb: "http://localhost:5173/src/assets/images/italy-flag.png",
+          away: "Juventus",
+          resultAway: 0,
+          result: "W",
+          final: "Yes",
+        },
+        {
+          localThmb:
+            "http://localhost:5173/src/assets/images/logos/teams/milan.png",
+          local: "Milan",
+          resultLocal: 2,
+          date: "2023",
+          stadium: "ALianz",
+          referee: "Marcus",
+          awayThmb:
+            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          away: "Juventus",
+          resultAway: 0,
+          result: "W",
+          final: "Yes",
+        },
       ],
       showMatch: "all",
       gameResult: null,
@@ -295,7 +316,7 @@ export default {
     selectValue(value) {
       if (this.showMatch && this.gameResult === value) {
         this.showMatch = "all";
-        this.gameResult = value;
+        return this.matches;
       } else {
         this.showMatch = value;
       }
@@ -314,13 +335,13 @@ export default {
     },
   },
   mounted() {
-    fetch("https://juve-vue-app-default-rtdb.firebaseio.com/matches.json")
-      .then((response) => response.json())
-      .then((data) => {
-        for (let id in data) {
-          this.matches.push(data[id]);
-        }
-      });
+    // fetch("https://juve-vue-app-default-rtdb.firebaseio.com/matches.json")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     for (let id in data) {
+    //       this.matches.push(data[id]);
+    //     }
+    //   });
   },
 };
 </script>
@@ -335,5 +356,8 @@ export default {
 .show-match,
 .game-result {
   border-right: 1px solid #000003;
+}
+.match-result {
+  border-bottom: 1px solid rgba(0, 0, 58, 0.5);
 }
 </style>

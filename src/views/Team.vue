@@ -52,34 +52,33 @@
         </v-row>
         <v-row>
           <v-col v-for="b in 6" :key="b" cols="3">
-            <v-slide-x-transition class="slide-card">
-              <v-card
-                v-if="show"
-                :rounded="0"
-                width="260"
-                style="border: 9px solid white"
-              >
-                <img
-                  src="../assets/images/players/GK/Sczeschy.png"
-                  alt=""
-                  height="240"
-                  style="background-size: cover"
-                />
+            <v-card
+              data-aos="fade-right"
+              v-if="show"
+              :rounded="0"
+              width="260"
+              style="border: 9px solid white"
+            >
+              <img
+                src="../assets/images/players/GK/Sczeschy.png"
+                alt=""
+                height="240"
+                style="background-size: cover"
+              />
 
-                <div class="d-flex align-center justify-space-between">
-                  <v-card-title class="pa-0"
-                    >Luiz Da Silva<br />Danilo
-                  </v-card-title>
-                  <v-card-subtitle class="pa-0"
-                    ><span
-                      class="mt-8 d-inline-block text-grey-darken-1"
-                      style="font-size: 7rem"
-                      >6</span
-                    >
-                  </v-card-subtitle>
-                </div>
-              </v-card>
-            </v-slide-x-transition>
+              <div class="d-flex align-center justify-space-between">
+                <v-card-title class="pa-0"
+                  >Luiz Da Silva<br />Danilo
+                </v-card-title>
+                <v-card-subtitle class="pa-0"
+                  ><span
+                    class="mt-8 d-inline-block text-grey-darken-1"
+                    style="font-size: 7rem"
+                    >6</span
+                  >
+                </v-card-subtitle>
+              </div>
+            </v-card>
           </v-col>
         </v-row>
       </div>
@@ -93,7 +92,12 @@
         </v-row>
         <v-row>
           <v-col v-for="c in 8" :key="c" cols="3">
-            <v-card :rounded="0" width="260" style="border: 9px solid white">
+            <v-card
+              data-aos="fade-right"
+              :rounded="0"
+              width="260"
+              style="border: 9px solid white"
+            >
               <img
                 src="../assets/images/players/GK/Sczeschy.png"
                 alt=""
@@ -128,6 +132,7 @@
         <v-row>
           <v-col v-for="d in 6" :key="d" cols="3">
             <v-card
+              data-aos="fade-right"
               :rounded="0"
               density="comfortable"
               elevation-0
@@ -162,6 +167,8 @@
 </template>
 
 <script>
+import AOS from "aos";
+
 export default {
   data() {
     return {
@@ -190,6 +197,8 @@ export default {
     };
   },
   mounted() {
+    AOS.init();
+
     this.show = true;
     fetch("https://juve-vue-app-default-rtdb.firebaseio.com/matches.json")
       .then((response) => response.json())

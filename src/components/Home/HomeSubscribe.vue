@@ -40,19 +40,21 @@
 // import db from "./firebase/init.js";
 
 export default {
-  data: () => ({
-    email: "",
-    emailError: "",
-    emailRules: [
-      // (value) => /.+@.+\..+/.test(value) || "Email must be valid",
-      (value) => {
-        if (value) {
-          return true;
-        }
-        return "You must enter an email address.";
-      },
-    ],
-  }),
+  data: () => {
+    return {
+      email: "",
+      emailError: "",
+      emailRules: [
+        (value) => /.+@.+\..+/.test(value) || "Email must be valid",
+        (value) => {
+          if (value) {
+            return true;
+          }
+          return "You must enter an email address.";
+        },
+      ],
+    };
+  },
   methods: {
     submitForm() {
       fetch(
@@ -72,7 +74,6 @@ export default {
         .catch((error) => {
           console.error(error);
         });
-      // this.email = "";
     },
   },
 };
