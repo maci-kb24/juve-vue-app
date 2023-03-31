@@ -20,13 +20,7 @@
                 width="260"
                 style="border: 9px solid white"
               >
-                <img
-                  :src="keeper.imageUrl"
-                  alt=""
-                  height="240"
-                  style="background-size: cover"
-                />
-
+                <v-img :aspect-ratio="1" :src="keeper.imageUrl"></v-img>
                 <div class="d-flex align-center justify-space-between">
                   <v-card-title class="pa-0">{{ keeper.name }} </v-card-title>
                   <v-card-subtitle class="pa-0"
@@ -51,7 +45,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col v-for="b in 6" :key="b" cols="3">
+          <v-col v-for="defender in defenders" cols="3">
             <v-card
               data-aos="fade-right"
               v-if="show"
@@ -59,22 +53,14 @@
               width="260"
               style="border: 9px solid white"
             >
-              <img
-                src="../assets/images/players/GK/Sczeschy.png"
-                alt=""
-                height="240"
-                style="background-size: cover"
-              />
-
+              <v-img :aspect-ratio="1" :src="defender.imageUrl"></v-img>
               <div class="d-flex align-center justify-space-between">
-                <v-card-title class="pa-0"
-                  >Luiz Da Silva<br />Danilo
-                </v-card-title>
+                <v-card-title class="pa-0">{{ defender.name }} </v-card-title>
                 <v-card-subtitle class="pa-0"
                   ><span
                     class="mt-8 d-inline-block text-grey-darken-1"
                     style="font-size: 7rem"
-                    >6</span
+                    >{{ defender.number }}</span
                   >
                 </v-card-subtitle>
               </div>
@@ -91,29 +77,21 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col v-for="c in 8" :key="c" cols="3">
+          <v-col v-for="midfield in midfielders" cols="3">
             <v-card
               data-aos="fade-right"
               :rounded="0"
               width="260"
               style="border: 9px solid white"
             >
-              <img
-                src="../assets/images/players/GK/Sczeschy.png"
-                alt=""
-                height="240"
-                style="background-size: cover"
-              />
-
+              <v-img :aspect-ratio="1" :src="midfield.imageUrl"></v-img>
               <div class="d-flex align-center justify-space-between">
-                <v-card-title class="pa-0"
-                  >Luiz Da Silva<br />Danilo
-                </v-card-title>
+                <v-card-title class="pa-0">{{ midfield.name }} </v-card-title>
                 <v-card-subtitle class="pa-0"
                   ><span
                     class="mt-8 d-inline-block text-grey-darken-1"
                     style="font-size: 7rem"
-                    >6</span
+                    >{{ midfield.number }}</span
                   >
                 </v-card-subtitle>
               </div>
@@ -130,7 +108,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col v-for="d in 6" :key="d" cols="3">
+          <v-col v-for="attack in attackers" cols="3">
             <v-card
               data-aos="fade-right"
               :rounded="0"
@@ -139,22 +117,15 @@
               width="260"
               style="border: 9px solid white"
             >
-              <img
-                src="../assets/images/players/GK/Sczeschy.png"
-                alt=""
-                height="240"
-                style="background-size: cover"
-              />
+              <v-img :aspect-ratio="1" :src="attack.imageUrl"></v-img>
 
               <div class="d-flex align-center justify-space-between">
-                <v-card-title class="pa-0"
-                  >Luiz Da Silva<br />Danilo
-                </v-card-title>
+                <v-card-title class="pa-0">{{ attack.name }} </v-card-title>
                 <v-card-subtitle class="pa-0"
                   ><span
                     class="mt-8 d-inline-block text-grey-darken-1"
                     style="font-size: 7rem"
-                    >6</span
+                    >{{ attack.number }}</span
                   >
                 </v-card-subtitle>
               </div>
@@ -176,23 +147,142 @@ export default {
         {
           name: "Wojciech Szczesny",
           imageUrl:
-            "http://localhost:5174/src/assets/images/players/GK/Sczeschy.png",
+            "http://localhost:5173/src/assets/images/players/GK/Sczeschy.png",
           number: 1,
         },
         {
           name: "Mattia Perin",
           imageUrl:
-            "http://localhost:5174/src/assets/images/players/GK/Perin.png",
+            "http://localhost:5173/src/assets/images/players/GK/Perin.png",
           number: 36,
         },
         {
           name: "Carlo Pinsoglio",
           imageUrl:
-            "http://localhost:5174/src/assets/images/players/GK/Pinsoglio.png",
+            "http://localhost:5173/src/assets/images/players/GK/Pinsoglio.png",
           number: 23,
         },
       ],
-      defenders: [],
+      defenders: [
+        {
+          name: "Mattia De Sciglio",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Def/DeSciglio.png",
+          number: 2,
+        },
+        {
+          name: "Gelson Bremer",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Def/Bremer.png",
+          number: 3,
+        },
+        {
+          name: "Luiz Da Silva Danilo",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Def/danilo1.png",
+          number: 6,
+        },
+        {
+          name: "Alex Sandro",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Def/AlexSandro.png",
+          number: 12,
+        },
+        {
+          name: "Leonardo Bonucci",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Def/Bonucci.png",
+          number: 19,
+        },
+        {
+          name: "Federico Gatti",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Def/Gatti.png",
+          number: 15,
+        },
+      ],
+      midfielders: [
+        {
+          name: "Manuel Locatelli",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Locatelli.png",
+          number: 5,
+        },
+        {
+          name: "Paul Pogba",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Pogba.png",
+          number: 10,
+        },
+        {
+          name: "Juan Cuadrado",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Cuadrado.png",
+          number: 11,
+        },
+        {
+          name: "Filip Kostic",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Kostic.png",
+          number: 17,
+        },
+        {
+          name: "Fabio Miretti",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Miretti.png",
+          number: 20,
+        },
+        {
+          name: "Adrien Rabiot",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Rabiot.png",
+          number: 25,
+        },
+        {
+          name: "Leandro Paredes",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Paredes.png",
+          number: 32,
+        },
+        {
+          name: "Nicolo Fagioli",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Mid/Fagioli.png",
+          number: 44,
+        },
+      ],
+      attackers: [
+        {
+          name: "Federico Chiesa",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Att/Chiesa.png",
+          number: 7,
+        },
+        {
+          name: "Dusan Vlahovic",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Att/Vlahovic.png",
+          number: 9,
+        },
+        {
+          name: "Arkadiusz Milik",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Att/Milik.png",
+          number: 14,
+        },
+        {
+          name: "Moise Kean",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Att/Kean.png",
+          number: 18,
+        },
+        {
+          name: "Angel Di Maria",
+          imageUrl:
+            "http://localhost:5173/src/assets/images/players/Att/DiMaria.png",
+          number: 22,
+        },
+      ],
       show: false,
     };
   },
@@ -200,13 +290,13 @@ export default {
     AOS.init();
 
     this.show = true;
-    fetch("https://juve-vue-app-default-rtdb.firebaseio.com/matches.json")
-      .then((response) => response.json())
-      .then((data) => {
-        for (let id in data) {
-          // this.defenders.push(data[id]);
-        }
-      });
+    // fetch("https://juve-vue-app-default-rtdb.firebaseio.com/matches.json")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     for (let id in data) {
+    //       this.defenders.push(data[id]);
+    //     }
+    //   });
   },
 };
 </script>
