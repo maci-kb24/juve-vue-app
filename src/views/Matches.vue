@@ -6,44 +6,51 @@
           <div class="matches-filter d-flex">
             <div class="show-match pa-4">
               <p class="pb-1">Show Match</p>
-              <v-btn-toggle v-model="showMatch">
+              <v-btn-toggle v-model="showMatches">
                 <v-btn
                   size="x-small"
                   class="mr-1"
                   value="all"
-                  @click="selectValue('all')"
+                  @click="showPlayed('all')"
                   >All</v-btn
                 >
-                <v-btn size="x-small" class="mr-1" @click="selectValue('Yes')"
+                <v-btn size="x-small" class="mr-1" @click="showPlayed('Yes')"
                   >Played</v-btn
                 >
-                <v-btn size="x-small" @click="selectValue('No')"
+                <v-btn size="x-small" @click="showPlayed('No')"
                   >Not Played</v-btn
                 >
               </v-btn-toggle>
             </div>
-            <!-- <div class="game-result pa-4">
+            <div class="game-result pa-4">
               <p class="pb-1">Game Result</p>
-              <v-btn-toggle v-model="gameResult">
+              <v-btn-toggle v-model="gameResults">
+                <!-- <v-btn
+                  size="x-small"
+                  class="mr-1"
+                  value="all"
+                  @click="sortResult('all')"
+                  >All</v-btn
+                > -->
                 <v-btn
                   size="x-small"
                   class="mr-1"
                   value="won"
-                  @click="selectValue('W')"
+                  @click="sortResult('W')"
                   >W</v-btn
                 >
                 <v-btn
                   size="x-small"
                   class="mr-1"
                   value="lost"
-                  @click="selectValue('L')"
+                  @click="sortResult('L')"
                   >L</v-btn
                 >
-                <v-btn size="x-small" value="draw" @click="selectValue('D')"
+                <v-btn size="x-small" value="draw" @click="sortResult('D')"
                   >D</v-btn
                 >
               </v-btn-toggle>
-            </div> -->
+            </div>
           </div>
           <div class="matches-info">
             <div v-for="match in filteredMatches" class="match-result d-flex">
@@ -338,7 +345,7 @@ export default {
             "http://localhost:5173/src/assets/images/logos/teams/salernitana.png",
           away: "Salernitana",
           resultAway: 2,
-          result: "W",
+          result: "D",
           final: "Yes",
         },
         {
@@ -398,7 +405,7 @@ export default {
             "http://localhost:5173/src/assets/images/logos/teams/juve.png",
           away: "Juventus",
           resultAway: 0,
-          result: "W",
+          result: "D",
           final: "Yes",
         },
         {
@@ -417,8 +424,8 @@ export default {
           final: "Yes",
         },
       ],
-      showMatch: "all",
-      gameResult: null,
+      showMatches: "all",
+      gameResults: "",
       flag: {
         imageUrl: "http://localhost:5173/src/assets/images/italy-flag.png",
       },
@@ -426,23 +433,31 @@ export default {
     };
   },
   methods: {
-    selectValue(value) {
-      if (this.showMatch && this.gameResult === value) {
-        this.showMatch = "all";
+    showPlayed(value) {
+      if (this.showMatches === "all") {
         return this.matches;
       } else {
-        this.showMatch = value;
+        this.showMatches = value;
+        this.gameResults = null; // reset gameResults
+      }
+    },
+    sortResult(value) {
+      if (this.gameResults === value) {
+        this.gameResults = null; // reset gameResults
+      } else {
+        this.gameResults = value;
       }
     },
   },
+
   computed: {
     filteredMatches() {
       let matches = this.matches;
-      if (this.showMatch !== "all") {
-        matches = matches.filter((match) => match.final === this.showMatch);
+      if (this.showMatches !== "all") {
+        matches = matches.filter((match) => match.final === this.showMatches);
       }
-      if (this.gameResult) {
-        matches = matches.filter((match) => match.result === this.gameResult);
+      if (this.gameResults) {
+        matches = matches.filter((match) => match.result === this.gameResults);
       }
       return matches;
     },
