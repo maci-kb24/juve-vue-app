@@ -5,7 +5,7 @@
         <v-row>
           <v-col>
             <div class="goalkeepers pt-6">
-              <h1 class="text-grey-lighten-1 font-weight-medium">
+              <h1 class="text-grey-lighten-1 text-h1 font-weight-medium">
                 Goalkeepers
               </h1>
             </div>
@@ -40,7 +40,9 @@
         <v-row>
           <v-col>
             <div class="defenders pt-6">
-              <h1 class="text-grey-lighten-1 font-weight-medium">Defence</h1>
+              <h1 class="text-grey-lighten-1 font-weight-medium text-h1">
+                Defence
+              </h1>
             </div>
           </v-col>
         </v-row>
@@ -72,7 +74,9 @@
         <v-row>
           <v-col>
             <div class="midfield pt-6">
-              <h1 class="text-grey-lighten-1 font-weight-medium">Midfield</h1>
+              <h1 class="text-grey-lighten-1 font-weight-medium text-h1">
+                Midfield
+              </h1>
             </div>
           </v-col>
         </v-row>
@@ -103,7 +107,9 @@
         <v-row>
           <v-col>
             <div class="attack pt-6">
-              <h1 class="text-grey-lighten-1 font-weight-medium">Attack</h1>
+              <h1 class="text-grey-lighten-1 font-weight-medium text-h1">
+                Attack
+              </h1>
             </div>
           </v-col>
         </v-row>
@@ -302,13 +308,25 @@ export default {
 </script>
 
 <style scoped>
+.the-team {
+  background-repeat: repeat;
+  background-image: linear-gradient(
+    129deg,
+    #000000 7.14%,
+    #ffffff 7.14%,
+    #ffffff 50%,
+    #000000 50%,
+    #000000 57.14%,
+    #ffffff 57.14%,
+    #ffffff 100%
+  );
+  background-size: 9.01px 11.12px;
+}
+
 .v-container {
   max-width: 97%;
 }
-.goalkeepers h1 {
-  font-size: 5rem;
-  line-height: 0.9;
-}
+
 .v-col-3 {
   flex: 0 0 21%;
   max-width: 21%;

@@ -66,7 +66,7 @@
 }
 .stripe {
   width: 7rem;
-  height: 19.6%;
+  height: 20%;
   position: absolute;
   overflow: hidden;
   transform: skewX(-20deg);
