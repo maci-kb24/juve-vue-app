@@ -133,8 +133,7 @@ export default {
       league: [
         {
           pos: 1,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/napoli.png",
+          thumbnail: "../../assets/images/logos/teams/napoli.png",
           team: "Napoli",
           win: 23,
           draw: 2,
@@ -143,8 +142,7 @@ export default {
         },
         {
           pos: 2,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/lazio.png",
+          thumbnail: "../../assets/images/logos/teams/lazio.png",
           team: "Lazio",
           win: 15,
           draw: 7,
@@ -153,8 +151,7 @@ export default {
         },
         {
           pos: 3,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/inter.png",
+          thumbnail: "../../assets/images/logos/teams/inter.png",
           team: "Inter",
           win: 16,
           draw: 2,
@@ -163,8 +160,7 @@ export default {
         },
         {
           pos: 4,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/milan.png",
+          thumbnail: "../../assets/images/logos/teams/milan.png",
           team: "Milan",
           win: 14,
           draw: 6,
@@ -173,8 +169,7 @@ export default {
         },
         {
           pos: 5,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/roma.png",
+          thumbnail: "../../assets/images/logos/teams/roma.png",
           team: "Roma",
           win: 14,
           draw: 5,
@@ -183,8 +178,7 @@ export default {
         },
         {
           pos: 6,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/atalanta.png",
+          thumbnail: "../../assets/images/logos/teams/atalanta.png",
           team: "Juventus",
           win: 13,
           draw: 6,
@@ -193,8 +187,7 @@ export default {
         },
         {
           pos: 7,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          thumbnail: "../../assets/images/logos/teams/juve.png",
           team: "Juventus",
           win: 17,
           draw: 5,
@@ -203,8 +196,7 @@ export default {
         },
         {
           pos: 8,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/udinese.png",
+          thumbnail: "../../assets/images/logos/teams/udinese.png",
           team: "Udinese",
           win: 9,
           draw: 11,
@@ -213,8 +205,7 @@ export default {
         },
         {
           pos: 9,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/fiorentina.png",
+          thumbnail: "../../assets/images/logos/teams/fiorentina.png",
           team: "Fiorentina",
           win: 10,
           draw: 7,
@@ -223,8 +214,7 @@ export default {
         },
         {
           pos: 10,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/bologna.png",
+          thumbnail: "../../assets/images/logos/teams/bologna.png",
           team: "Bologna",
           win: 10,
           draw: 7,
@@ -233,8 +223,7 @@ export default {
         },
         {
           pos: 11,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/torino.png",
+          thumbnail: "../../assets/images/logos/teams/torino.png",
           team: "Torino",
           win: 10,
           draw: 7,
@@ -243,8 +232,7 @@ export default {
         },
         {
           pos: 12,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/sassuolo.png",
+          thumbnail: "../../assets/images/logos/teams/sassuolo.png",
           team: "Sassuolo",
           win: 10,
           draw: 6,
@@ -253,8 +241,7 @@ export default {
         },
         {
           pos: 13,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/monza.png",
+          thumbnail: "../../assets/images/logos/teams/monza.png",
           team: "Monza",
           win: 9,
           draw: 7,
@@ -263,8 +250,7 @@ export default {
         },
         {
           pos: 14,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/empoli.png",
+          thumbnail: "../../assets/images/logos/teams/empoli.png",
           team: "Empoli",
           win: 6,
           draw: 10,
@@ -273,8 +259,7 @@ export default {
         },
         {
           pos: 15,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/lecce.png",
+          thumbnail: "../../assets/images/logos/teams/lecce.png",
           team: "Lecce",
           win: 6,
           draw: 9,
@@ -283,8 +268,7 @@ export default {
         },
         {
           pos: 16,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/salernitana.png",
+          thumbnail: "../../assets/images/logos/teams/salernitana.png",
           team: "Salernitana",
           win: 6,
           draw: 9,
@@ -293,8 +277,7 @@ export default {
         },
         {
           pos: 17,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/spezia.png",
+          thumbnail: "../../assets/images/logos/teams/spezia.png",
           team: "Spezia",
           win: 5,
           draw: 9,
@@ -303,8 +286,7 @@ export default {
         },
         {
           pos: 18,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/verona.png",
+          thumbnail: "../../assets/images/logos/teams/verona.png",
           team: "Verona",
           win: 4,
           draw: 7,
@@ -313,8 +295,7 @@ export default {
         },
         {
           pos: 19,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/sampdoria.png",
+          thumbnail: "../../assets/images/logos/teams/sampdoria.png",
           team: "Sampdoria",
           win: 3,
           draw: 6,
@@ -323,8 +304,7 @@ export default {
         },
         {
           pos: 20,
-          thumbnail:
-            "http://localhost:5173/src/assets/images/logos/teams/cremonese.png",
+          thumbnail: "../../assets/images/logos/teams/cremonese.png",
           team: "Cremonese",
           win: 1,
           draw: 10,
@@ -334,90 +314,78 @@ export default {
       ],
       matches: [
         {
-          localThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          localThmb: "../../assets/images/logos/teams/juve.png",
           local: "Juventus",
           resultLocal: 2,
           date: "11.09.2022",
           stadium: "ALianz",
           referee: "Marcus",
-          awayThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/salernitana.png",
+          awayThmb: "../../assets/images/logos/teams/salernitana.png",
           away: "Salernitana",
           resultAway: 2,
           result: "D",
           final: "Yes",
         },
         {
-          localThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/fiorentina.png",
+          localThmb: "../../assets/images/logos/teams/fiorentina.png",
           local: "Fiorentina",
           resultLocal: 1,
           date: "03.09.2022",
           stadium: "Artemio Franchi",
           referee: "Marcus",
-          awayThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          awayThmb: "../../assets/images/logos/teams/juve.png",
           away: "Juventus",
           resultAway: 1,
           result: "D",
           final: "Yes",
         },
         {
-          localThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          localThmb: "../../assets/images/logos/teams/juve.png",
           local: "Juventus",
           resultLocal: 2,
           date: "31.08.2022",
           stadium: "ALianz",
           referee: "Marcus",
-          awayThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/spezia.png",
+          awayThmb: "../../assets/images/logos/teams/spezia.png",
           away: "Spezia",
           resultAway: 0,
           result: "W",
           final: "Yes",
         },
         {
-          localThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          localThmb: "../../assets/images/logos/teams/juve.png",
           local: "Juventus",
           resultLocal: 1,
           date: "27.08.2022",
           stadium: "ALianz",
           referee: "Marcus",
-          awayThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/roma.png",
+          awayThmb: "../../assets/images/logos/teams/roma.png",
           away: "Roma",
           resultAway: 1,
           result: "D",
           final: "Yes",
         },
         {
-          localThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/sampdoria.png",
+          localThmb: "../../assets/images/logos/teams/sampdoria.png",
           local: "Sampdoria",
           resultLocal: 0,
           date: "22.08.2022",
           stadium: "Marassi",
           referee: "Marcus",
-          awayThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          awayThmb: "../../assets/images/logos/teams/juve.png",
           away: "Juventus",
           resultAway: 0,
           result: "D",
           final: "Yes",
         },
         {
-          localThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/juve.png",
+          localThmb: "../../assets/images/logos/teams/juve.png",
           local: "Juventus",
           resultLocal: 3,
           date: "15.08.2022",
           stadium: "ALianz",
           referee: "Marcus",
-          awayThmb:
-            "http://localhost:5173/src/assets/images/logos/teams/sassuolo.png",
+          awayThmb: "../../assets/images/logos/teams/sassuolo.png",
           away: "Sassuolo",
           resultAway: 0,
           result: "W",
@@ -427,7 +395,7 @@ export default {
       showMatches: "all",
       gameResults: "",
       flag: {
-        imageUrl: "http://localhost:5173/src/assets/images/italy-flag.png",
+        imageUrl: "../../assets/images/italy-flag.png",
       },
       list: [],
     };

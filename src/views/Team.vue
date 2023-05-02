@@ -152,140 +152,118 @@ export default {
       keepers: [
         {
           name: "Wojciech Szczesny",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/GK/Sczeschy.png",
+          imageUrl: "../../assets/images/players/GK/Sczeschy.png",
           number: 1,
         },
         {
           name: "Mattia Perin",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/GK/Perin.png",
+          imageUrl: "../../assets/images/players/GK/Perin.png",
           number: 36,
         },
         {
           name: "Carlo Pinsoglio",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/GK/Pinsoglio.png",
+          imageUrl: "../../assets/images/players/GK/Pinsoglio.png",
           number: 23,
         },
       ],
       defenders: [
         {
           name: "Mattia De Sciglio",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Def/DeSciglio.png",
+          imageUrl: "../../assets/images/players/Def/DeSciglio.png",
           number: 2,
         },
         {
           name: "Gelson Bremer",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Def/Bremer.png",
+          imageUrl: "../../assets/images/players/Def/Bremer.png",
           number: 3,
         },
         {
           name: "Luiz Da Silva Danilo",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Def/danilo1.png",
+          imageUrl: "../../assets/images/players/Def/danilo1.png",
           number: 6,
         },
         {
           name: "Alex Sandro",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Def/AlexSandro.png",
+          imageUrl: "../../assets/images/players/Def/AlexSandro.png",
           number: 12,
         },
         {
           name: "Leonardo Bonucci",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Def/Bonucci.png",
+          imageUrl: "../../assets/images/players/Def/Bonucci.png",
           number: 19,
         },
         {
           name: "Federico Gatti",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Def/Gatti.png",
+          imageUrl: "../../assets/images/players/Def/Gatti.png",
           number: 15,
         },
       ],
       midfielders: [
         {
           name: "Manuel Locatelli",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Locatelli.png",
+          imageUrl: "../../assets/images/players/Mid/Locatelli.png",
           number: 5,
         },
         {
           name: "Paul Pogba",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Pogba.png",
+          imageUrl: "../../assets/images/players/Mid/Pogba.png",
           number: 10,
         },
         {
           name: "Juan Cuadrado",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Cuadrado.png",
+          imageUrl: "../../assets/images/players/Mid/Cuadrado.png",
           number: 11,
         },
         {
           name: "Filip Kostic",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Kostic.png",
+          imageUrl: "../../assets/images/players/Mid/Kostic.png",
           number: 17,
         },
         {
           name: "Fabio Miretti",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Miretti.png",
+          imageUrl: "../../assets/images/players/Mid/Miretti.png",
           number: 20,
         },
         {
           name: "Adrien Rabiot",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Rabiot.png",
+          imageUrl: "../../assets/images/players/Mid/Rabiot.png",
           number: 25,
         },
         {
           name: "Leandro Paredes",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Paredes.png",
+          imageUrl: "../../assets/images/players/Mid/Paredes.png",
           number: 32,
         },
         {
           name: "Nicolo Fagioli",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Mid/Fagioli.png",
+          imageUrl: "../../assets/images/players/Mid/Fagioli.png",
           number: 44,
         },
       ],
       attackers: [
         {
           name: "Federico Chiesa",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Att/Chiesa.png",
+          imageUrl: "../../assets/images/players/Att/Chiesa.png",
           number: 7,
         },
         {
           name: "Dusan Vlahovic",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Att/Vlahovic.png",
+          imageUrl: "../../assets/images/players/Att/Vlahovic.png",
           number: 9,
         },
         {
           name: "Arkadiusz Milik",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Att/Milik.png",
+          imageUrl: "../../assets/images/players/Att/Milik.png",
           number: 14,
         },
         {
           name: "Moise Kean",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Att/Kean.png",
+          imageUrl: "../../assets/images/players/Att/Kean.png",
           number: 18,
         },
         {
           name: "Angel Di Maria",
-          imageUrl:
-            "http://localhost:5173/src/assets/images/players/Att/DiMaria.png",
+          imageUrl: "../../assets/images/players/Att/DiMaria.png",
           number: 22,
         },
       ],
