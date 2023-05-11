@@ -45,11 +45,13 @@ export default {
         { text: "Home", icon: "mdi-home", to: "/" },
         { text: "The Team", icon: "mdi-help-circle", to: "/team" },
         { text: "Matches", icon: "mdi-email", to: "/matches" },
+        { text: "Admin", icon: "mdi-view-dashboard", to: "/admin" },
       ],
       links: [
         { id: 1, text: "Home", url: "/" },
         { id: 2, text: "The Team", url: "/team" },
         { id: 3, text: "Matches", url: "/matches" },
+        { id: 4, text: "Admin", url: "/admin" },
       ],
     };
   },

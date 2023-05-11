@@ -1,4 +1,12 @@
 <template>
+  <div>
+    <ul v-if="players.length">
+      <li v-for="player in players" :key="player.id">
+        {{ player.name }}
+      </li>
+    </ul>
+    <div v-else>Loading players...</div>
+  </div>
   <div class="home-players">
     <v-container>
       <v-row>
@@ -154,7 +162,32 @@
   </div>
 </template>
 
-<script setup></script>
+<script>
+import { firebasePlayers } from "../../firebase";
+
+export default {
+  data() {
+    return {
+      players: [],
+      errorMessage: "",
+    };
+  },
+  mounted() {
+    // const firebasePlayers = ref(db, "players");
+
+    firebasePlayers
+      .once("value")
+      .then((snapshot) => {
+        this.players = snapshot.val();
+        console.log("firebasePlayers:", firebasePlayers);
+        console.log("this.players:", this.players);
+      })
+      .catch((error) => {
+        this.errorMessage = `Error retrieving players: ${error.message}`;
+      });
+  },
+};
+</script>
 
 <style scoped>
 .home-players {

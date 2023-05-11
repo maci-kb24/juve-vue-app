@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, onValue, ref } from "firebase/database";
+import { getDatabase, ref } from "firebase/database";
 import "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -10,6 +10,7 @@ import "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyDfB5d0xQHvz9ndgrBQyxKyFseWG_BGrb4",
   authDomain: "juve-vue-app.firebaseapp.com",
+  databaseURL: "https://juve-vue-app-default-rtdb.firebaseio.com/",
   projectId: "juve-vue-app",
   storageBucket: "juve-vue-app.appspot.com",
   messagingSenderId: "891345036424",
@@ -19,8 +20,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
-// const firebaseMatches = db.ref("matches");
-// const firebasePlayers = database.ref("players");
-// const firebasePromotions = db.ref("promotions");
+const firebaseMatches = ref(db, "matches");
+const firebasePlayers = ref(db, "players");
+const firebasePromotions = ref(db, "promotions");
 
-export default db;
+export { db, firebaseMatches, firebasePlayers, firebasePromotions };

@@ -94,7 +94,7 @@
         <div class="league-table">
           <div class="league-table-title d-flex align-center px-4">
             <img :src="flag.imageUrl" alt="" width="35" height="35" />
-            <h1 class="text-white pa-4">Seria A</h1>
+            <h1 class="text-white pa-4">Seria A 2022/23</h1>
           </div>
           <v-table theme="dark" cols="5">
             <thead>
