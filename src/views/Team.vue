@@ -268,6 +268,7 @@ export default {
         },
       ],
       show: false,
+      players: [],
     };
   },
   mounted() {
@@ -281,6 +282,7 @@ export default {
     //       this.defenders.push(data[id]);
     //     }
     //   });
+    // const db = getDatabase();
   },
 };
 </script>

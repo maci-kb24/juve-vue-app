@@ -163,29 +163,13 @@
 </template>
 
 <script>
-import { firebasePlayers } from "../../firebase";
-
 export default {
   data() {
     return {
       players: [],
-      errorMessage: "",
     };
   },
-  mounted() {
-    // const firebasePlayers = ref(db, "players");
-
-    firebasePlayers
-      .once("value")
-      .then((snapshot) => {
-        this.players = snapshot.val();
-        console.log("firebasePlayers:", firebasePlayers);
-        console.log("this.players:", this.players);
-      })
-      .catch((error) => {
-        this.errorMessage = `Error retrieving players: ${error.message}`;
-      });
-  },
+  mounted() {},
 };
 </script>
 
