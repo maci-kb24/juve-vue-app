@@ -13,6 +13,6 @@
 </template>
 
 <script setup>
-import RegisterForm from "../components/auth/RegisterForm.vue";
-import LoginForm from "../components/auth/LoginForm.vue";
+import Register from "../components/auth/Register.vue";
+import Login from "../components/auth/Login.vue";
 </script>

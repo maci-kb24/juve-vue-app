@@ -41,6 +41,7 @@ export default {
   methods: {
     handleSubmit() {
       // Handle form submission here
+      console.log(this.email.value, this.password);
     },
     handleReset() {
       this.email.value = "";
