@@ -12,5 +12,3 @@
 import Navbar from "./components/nav/Navbar.vue";
 import Footer from "./components/nav/Footer.vue";
 </script>
-
-<style scoped></style>
