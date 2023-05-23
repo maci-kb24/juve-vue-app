@@ -12,6 +12,21 @@
           </h1>
         </div>
         <div>
+          <v-btn color="primary" class="mr-4" @click="showRegisterComponent"
+            >Register</v-btn
+          >
+          <v-btn color="primary" @click="showLoginComponent">Login</v-btn>
+          <component :is="currentComponent"></component>
+          <!-- <router-link
+            :to="{
+              name: currentComponent === 'register' ? 'register' : 'login',
+            }"
+          >
+            {{ currentComponent === "register" ? "Register" : "Login" }}
+          </router-link>
+          <router-view></router-view> -->
+        </div>
+        <!-- <div>
           <h2>Register</h2>
           <Register />
         </div>
@@ -19,7 +34,7 @@
           <h2>Login</h2>
 
           <Login />
-        </div>
+        </div> -->
       </v-col>
     </v-row>
   </v-container>
@@ -36,8 +51,17 @@ export default {
   },
   data() {
     return {
+      currentComponent: "register",
       isUserLoggedIn: false,
     };
+  },
+  methods: {
+    showRegisterComponent() {
+      this.currentComponent = "Register";
+    },
+    showLoginComponent() {
+      this.currentComponent = "Login";
+    },
   },
 };
 </script>

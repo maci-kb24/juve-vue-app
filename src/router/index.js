@@ -22,14 +22,18 @@ const routes = [
   {
     path: "/admin",
     component: Admin,
-  },
-  {
-    path: "/login",
-    component: Login,
-  },
-  {
-    path: "/register",
-    component: Register,
+    children: [
+      {
+        path: "register",
+        component: Register,
+        name: "register",
+      },
+      {
+        path: "login",
+        component: Login,
+        name: "login",
+      },
+    ],
   },
 ];
 

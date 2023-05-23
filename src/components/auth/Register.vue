@@ -19,10 +19,16 @@
       @click:append="show1 = !show1"
     ></v-text-field>
 
-    <v-btn class="me-4" type="submit"> submit </v-btn>
+    <v-btn class="me-4" type="submit"> Register </v-btn>
 
     <v-btn @click="handleReset"> clear </v-btn>
   </form>
+  <!-- <div>
+    <p>
+      Already registered? Click here to
+      <router-link to="/admin/login">login</router-link>
+    </p>
+  </div> -->
 </template>
 
 <script>

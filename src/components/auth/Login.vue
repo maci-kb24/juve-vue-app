@@ -1,14 +1,23 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" v-model="email" required />
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" v-model="password" required />
-    </div>
-    <button type="submit">Register</button>
+    <v-text-field
+      v-model="email.value"
+      :error-messages="email.errorMessage"
+      :rules="[requiredRule, emailRule]"
+      label="E-mail"
+    ></v-text-field>
+    <v-text-field
+      v-model="password"
+      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+      :rules="[requiredRule, minRule]"
+      :type="show1 ? 'text' : 'password'"
+      name="input-10-1"
+      label="Password"
+      hint="At least 8 characters"
+      counter
+      @click:append="show1 = !show1"
+    ></v-text-field>
+    <v-btn class="me-4" type="submit"> Login </v-btn>
   </form>
 </template>
 
