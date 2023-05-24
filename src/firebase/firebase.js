@@ -20,11 +20,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 const db = getDatabase(app);
 // const firebaseMatches = ref(db, "matches");
-const firebasePlayers = ref(db, "players");
+// const firebasePlayers = ref(db, "players");
 // const firebasePromotions = ref(db, "promotions");
 
-export { db, auth, firebasePlayers };
+export { db, auth };

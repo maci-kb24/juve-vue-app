@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form @submit.prevent="RegisterForm">
     <v-text-field
       v-model="email.value"
       :error-messages="email.errorMessage"
@@ -32,6 +32,9 @@
 </template>
 
 <script>
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+
 export default {
   data() {
     return {
@@ -45,9 +48,19 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      // Handle form submission here
-      console.log(this.email.value, this.password);
+    async RegisterForm() {
+      try {
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          this.email.value,
+          this.password
+        );
+        const user = userCredential.user;
+        console.log("User registered:", user);
+        // Perform any additional actions after registration
+      } catch (error) {
+        console.error("Registration error:", error);
+      }
     },
     handleReset() {
       this.email.value = "";
