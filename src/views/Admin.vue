@@ -2,8 +2,8 @@
   <v-container class="fill-height">
     <v-row align="center" justify="center">
       <v-col cols="6" class="text-center mx-auto">
-        <div class="mt-8">
-          <h1>
+        <div>
+          <h1 class="my-8">
             {{
               !isUserLoggedIn
                 ? "Welcome to the admin dashboard"
@@ -12,10 +12,10 @@
           </h1>
         </div>
         <div>
-          <v-btn color="primary" class="mr-4" @click="showRegisterComponent"
+          <!-- <v-btn color="primary" class="mr-4" @click="showRegisterComponent"
             >Register</v-btn
-          >
-          <v-btn color="primary" @click="showLoginComponent">Login</v-btn>
+          > -->
+          <!-- <v-btn color="primary" @click="showLoginComponent">Login</v-btn> -->
           <component :is="currentComponent"></component>
           <!-- <router-link
             :to="{
@@ -23,8 +23,8 @@
             }"
           >
             {{ currentComponent === "register" ? "Register" : "Login" }}
-          </router-link>
-          <router-view></router-view> -->
+          </router-link> -->
+          <router-view></router-view>
         </div>
         <!-- <div>
           <h2>Register</h2>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="RegisterForm">
+  <form @submit.prevent="RegisterUser">
     <v-text-field
       v-model="email.value"
       :error-messages="email.errorMessage"
@@ -19,16 +19,16 @@
       @click:append="show1 = !show1"
     ></v-text-field>
 
-    <v-btn class="me-4" type="submit"> Register </v-btn>
+    <v-btn class="me-4 text-white register-btn" type="submit"> Register </v-btn>
 
-    <v-btn @click="handleReset"> clear </v-btn>
+    <v-btn class="text-white clear-btn" @click="handleReset"> clear </v-btn>
   </form>
-  <!-- <div>
-    <p>
-      Already registered? Click here to
-      <router-link to="/admin/login">login</router-link>
+  <div v-if="registrationSuccess" class="success-message">
+    <p class="mt-4 text-light-green-darken-1">
+      Registration successful! Please
+      <router-link to="/admin/login">log in</router-link>.
     </p>
-  </div> -->
+  </div>
 </template>
 
 <script>
@@ -40,6 +40,7 @@ export default {
     return {
       email: { value: "", errorMessage: "" },
       password: "",
+      registrationSuccess: false,
       show1: false,
       requiredRule: (v) => !!v || "Field is required",
       minRule: (v) => (v && v.length >= 8) || "Minimum 8 characters",
@@ -48,13 +49,14 @@ export default {
     };
   },
   methods: {
-    async RegisterForm() {
+    async RegisterUser() {
       try {
         const userCredential = await createUserWithEmailAndPassword(
           auth,
           this.email.value,
           this.password
         );
+        this.registrationSuccess = true;
         const user = userCredential.user;
         console.log("User registered:", user);
         // Perform any additional actions after registration
@@ -70,3 +72,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.register-btn,
+.clear-btn {
+  background-color: #ef484d;
+}
+</style>
